@@ -11,10 +11,12 @@
   //turn off-on specific rules
   "rules":{
     "react/prop-types":0,
-    "no-console":1
+    "no-console":1,
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1
   },
   //new abilities
-  "plugins": ["react", "import", "jsx"],
+  "plugins": ["react", "import", "jsx", "react-hooks"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
