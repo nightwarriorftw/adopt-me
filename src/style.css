@@ -10,6 +10,12 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Custom */
+.item-center {
+  text-align: center;
+}
+
+
 .search-params {
   width: 1100px;
   margin: 0 auto;
