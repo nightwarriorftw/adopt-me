@@ -4,24 +4,20 @@ import Pet from "./Pet";
 const Results = ({ pets }) => {
   return (
     <div className="search">
-      {!pets.length ? (
-        <h1>No Pets Found</h1>
+      {pets.length === 0 ? (
+        <h1>No results found !!</h1>
       ) : (
-        pets.map(pet => {
-          return (
-            <Pet
-              animal={pet.type}
-              key={pet.id}
-              name={pet.name}
-              breed={pet.breeds.primary}
-              media={pet.photos}
-              location={`${pet.contact.address.city}, ${
-                pet.contact.address.state
-              }`}
-              id={pet.id}
-            />
-          );
-        })
+        pets.map(pet => (
+          <Pet
+            animal={pet.animal}
+            key={pet.id}
+            breed={pet.breed}
+            name={pet.name}
+            media={pet.photos}
+            location={`${pet.contact.city} ${pet.contact.address.state}`}
+            id={pet.id}
+          />
+        ))
       )}
     </div>
   );
