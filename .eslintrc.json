@@ -1,22 +1,22 @@
 {
-  //set of rules
   "extends": [
-    "eslint:recommended", 
+    "eslint:recommended",
     "plugin:import/errors",
     "plugin:react/recommended",
-    "plugin:react/a11y", 
-    "preetier", 
+    "plugin:react/a11y",
+    "preetier",
     "preetier/react"
   ],
-  //turn off-on specific rules
-  "rules":{
-    "react/prop-types":0,
-    "no-console":1,
+
+  "rules": {
+    "react/prop-types": 0,
+    "no-console": 1,
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1
   },
-  //new abilities
+
   "plugins": ["react", "import", "jsx", "react-hooks"],
+  "parser": "bable-eslint",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",

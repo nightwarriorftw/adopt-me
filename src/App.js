@@ -13,7 +13,7 @@ const App = () => {
         </header>
         <Router>
           <SearchParams path="/" />
-          <Details path="/detail/:id" />
+          <Details path="/details/:id" />
         </Router>
       </div>
     </React.StrictMode>
