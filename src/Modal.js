@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 const Modal = ({ children }) => {
   const elRef = useRef(null);
 
-  if (!elRed.current) {
+  if (!elRef.current) {
     const div = document.createElement("div");
     elRef.current = div;
   }
@@ -15,7 +15,7 @@ const Modal = ({ children }) => {
 
     // Special feature of useEffect as its a cleanup function
     return () => modalRoot.removeChild(elRef.current);
-  });
+  }, []);
 
   return createPortal(<div>{children}</div>, elRef.current);
 };
