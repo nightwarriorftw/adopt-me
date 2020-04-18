@@ -27,14 +27,11 @@ const SearchComponent = () => {
   useEffect(() => {
     setBreeds([]);
     setBreed("");
-    pet.breeds(animal).then(
-      ({ breeds }) => {
-        const breedString = breeds.map(({ name }) => name);
-        setBreeds(breedString);
-      },
-      error => console.error(error)
-    );
-  }, [animal, setBreed, setBreeds]);
+    pet.breeds(animal).then(({ breeds }) => {
+      const breedString = breeds.map(({ name }) => name);
+      setBreeds(breedString);
+    }, console.error);
+  }, [animal]);
 
   return (
     <div className="search-params">
