@@ -1,27 +1,26 @@
 # Pet Adopter
 An react application to adopt pets near Seattle.
 
-[![Open Issues](https://img.shields.io/github/issues/nightwarriorftw/adopt-me?style=for-the-badge&logo=github)](https://github.com/nightwarriorftw/adopt-me/issues) [![Forks](https://img.shields.io/github/forks/nightwarriorftw/adopt-me?style=for-the-badge&logo=github)](https://github.com/nightwarriorftw/adopt-me/network/members) [![Stars](https://img.shields.io/github/stars/nightwarriorftw/adopt-me?style=for-the-badge&logo=reverbnation)](hhttps://github.com/nightwarriorftw/adopt-me/stargazers) ![Maintained](https://img.shields.io/maintenance/yes/2019?style=for-the-badge&logo=github)![Open Source Love](https://img.shields.io/badge/Open%20Source-%E2%99%A5-red?style=for-the-badge&logo=open-source-initiative) ![Built with Love](https://img.shields.io/badge/Built%20With-%E2%99%A5-critical?style=for-the-badge&logo=ko-fi) [![Follow Me](https://img.shields.io/twitter/follow/nightwarriorftw?color=blue&label=Follow%20%40nightwarriorftw&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?screen_name=nightwarriorftw) [![Telegram](https://img.shields.io/badge/Telegram-Chat-informational?style=for-the-badge&logo=telegram)](https://telegram.me/nightwarriorftw)
+[![Open Issues](https://img.shields.io/github/issues/nightwarriorftw/adopt-me?style=for-the-badge&logo=github)](https://github.com/nightwarriorftw/adopt-me/issues) [![Forks](https://img.shields.io/github/forks/nightwarriorftw/adopt-me?style=for-the-badge&logo=github)](https://github.com/nightwarriorftw/adopt-me/network/members) [![Stars](https://img.shields.io/github/stars/nightwarriorftw/adopt-me?style=for-the-badge&logo=reverbnation)](hhttps://github.com/nightwarriorftw/adopt-me/stargazers) ![Maintained](https://img.shields.io/maintenance/yes/2020?style=for-the-badge&logo=github)![Open Source Love](https://img.shields.io/badge/Open%20Source-%E2%99%A5-red?style=for-the-badge&logo=open-source-initiative) ![Built with Love](https://img.shields.io/badge/Built%20With-%E2%99%A5-critical?style=for-the-badge&logo=ko-fi) [![Follow Me](https://img.shields.io/twitter/follow/nightwarriorftw?color=blue&label=Follow%20%40nightwarriorftw&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?screen_name=nightwarriorftw) [![Telegram](https://img.shields.io/badge/Telegram-Chat-informational?style=for-the-badge&logo=telegram)](https://telegram.me/nightwarriorftw)
 
 
 ## :nut_and_bolt: Development
 
-#### 1. Create & activate the virtual environment
 
-#### 2. Clone the Repository
+#### 1. Clone the Repository
 
 ```Bash
 git clone https://github.com/nightwarriorftw/adopt-me.git
 cd adopt-me
 ```
 
-#### 3. Install the dependencies
+#### 2. Install the dependencies
 
 ```BASH
 npm install
 ```
 
-#### 6. Run server:
+#### 3. Run server:
 
 ```BASH
 npm run dev
