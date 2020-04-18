@@ -3,21 +3,28 @@ import pet from "@frontendmasters/pet";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundaries";
 import ThemeContext from "./ThemeContext";
+import { navigate } from "@reach/router";
+import Modal from "./Modal";
 
 class Details extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      showModal: false
     };
+    this.toggleModal = this.toggleModal.bind(this);
+    this.adopt = this.adopt.bind(this);
   }
 
   componentDidMount() {
     pet.animal(this.props.id).then(({ animal }) => {
       this.setState({
+        url: animal.url,
         name: animal.name,
         animal: animal.type,
-        location: `${animal.contact.address.city}, ${animal.contact.address.state}`,
+        location: `${animal.contact.address.city}, 
+	      ${animal.contact.address.state}`,
         description: animal.description,
         media: animal.photos,
         breed: animal.breeds.primary,
@@ -26,12 +33,27 @@ class Details extends React.Component {
     }, console.error);
   }
 
+  toggleModal() {
+    this.setState({ showModal: !this.state.showModal });
+  }
+  adopt() {
+    navigate(this.state.url);
+  }
+
   render() {
     if (this.state.loading) {
       return <h1>Loading....</h1>;
     }
 
-    const { animal, breed, location, description, name, media } = this.state;
+    const {
+      animal,
+      breed,
+      location,
+      description,
+      name,
+      media,
+      showModal
+    } = this.state;
 
     return (
       <div className="details">
@@ -41,12 +63,28 @@ class Details extends React.Component {
           <h2>{`${animal} - ${breed} - ${location}`}</h2>
           <ThemeContext.Consumer>
             {themeHook => (
-              <button style={{ backgroundColor: themeHook[0] }}>
+              <button
+                onClick={this.toggleModal}
+                style={{ backgroundColor: themeHook[0] }}
+              >
                 Adopt {name}
               </button>
             )}
           </ThemeContext.Consumer>
           <p> {description} </p>
+          {showModal ? (
+            <Modal>
+              <div>
+                <h1>Are you sure you want to adopt {name}</h1>
+                <div className="buttons">
+                  <button onClick={this.adopt}>Yes</button>
+                  <button onClick={this.toggleModal}>
+                    No, I am a heartsucker!!
+                  </button>
+                </div>
+              </div>
+            </Modal>
+          ) : null}
         </div>
       </div>
     );
