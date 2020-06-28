@@ -36,6 +36,32 @@ Pictures of project.
 ![Details page](./assets/adopt-me/p3.png)
 ![Modal adoption confirmation ](./assets/adopt-me/p4.png)
 
+## :zap: Demo
+![Demo](./assets/adopt-me/demo.gif)
+
+## :file_folder: File structure
+```
+├── assets
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+└── src
+    ├── App.js
+    ├── Carousel.js
+    ├── Details.js
+    ├── ErrorBoundaries.js
+    ├── index.html
+    ├── Modal.js
+    ├── Navbar.js
+    ├── Pet.js
+    ├── Results.js
+    ├── SearchParams.js
+    ├── style.css
+    ├── ThemeContext.js
+    └── useDropdown.js
+```
+
 ## :star2: Credit/Acknowledgment
 
 Credit goes to BrianHolt for explaining me concepts of react.
