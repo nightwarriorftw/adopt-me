@@ -1,6 +1,5 @@
 import React, { useState, lazy, Suspense } from "react";
 import { render } from "react-dom";
-import SearchParams from "./SearchParams";
 import { Router, Link } from "@reach/router";
 import ThemeContext from "./ThemeContext";
 import Navbar from './Navbar';
@@ -8,6 +7,7 @@ import Navbar from './Navbar';
 
 // Dynamic import with lazy
 const Details = lazy(() => import('./Details'));
+const SearchParams = lazy(() => import('./SearchParams'));
 
 const App = () => {
   const themeHook = useState("blue");
