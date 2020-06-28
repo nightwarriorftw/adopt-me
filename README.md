@@ -40,7 +40,7 @@ Pictures of project.
 ![Demo](./assets/adopt-me/demo.gif)
 
 ## :file_folder: File structure
-`
+```
 ├── assets
 ├── LICENSE
 ├── package.json
@@ -60,7 +60,7 @@ Pictures of project.
     ├── style.css
     ├── ThemeContext.js
     └── useDropdown.js
-`
+```
 
 ## :star2: Credit/Acknowledgment
 
