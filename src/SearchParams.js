@@ -3,17 +3,14 @@ import pet, { ANIMALS } from "@frontendmasters/pet";
 import useDropdown from "./useDropdown";
 import Results from "./Results";
 import ThemeContext from "./ThemeContext";
-import { connect } from 'react-redux';
-import changeLocation from './actions/locations';
-import changeTheme from './actions/theme';
 
-const SearchComponent = (props) => {
+const SearchComponent = () => {
   const [location, setLocation] = useState("Seattle, WA");
   const [breeds, setBreeds] = useState([]);
   const [animal, AnimalDropDown] = useDropdown("Animal", "dog", ANIMALS);
   const [breed, BreedsDropDown, setBreed] = useDropdown("Breed", "", breeds);
   const [pets, setPets] = useState([]);
-  const [theme, setTheme] = useState('blue')
+  const [theme, setTheme] = useContext(ThemeContext);
 
   async function requestPets() {
     const { animals } = await pet.animals({
@@ -79,6 +76,7 @@ const SearchComponent = (props) => {
 };
 
 export default SearchComponent;
+
 
 // const mapStateToProps = ({theme, location}) => ({
 //   theme,
