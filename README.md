@@ -36,6 +36,9 @@ Pictures of project.
 ![Details page](./assets/adopt-me/p3.png)
 ![Modal adoption confirmation ](./assets/adopt-me/p4.png)
 
+# :video Demo
+![Demo](./assets/adopt-me/demo.gif)
+
 ## :star2: Credit/Acknowledgment
 
 Credit goes to BrianHolt for explaining me concepts of react.
