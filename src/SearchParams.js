@@ -3,14 +3,15 @@ import pet, { ANIMALS } from "@frontendmasters/pet";
 import useDropdown from "./useDropdown";
 import Results from "./Results";
 import ThemeContext from "./ThemeContext";
+import { connect } from 'react-redux';
+import changeLocation from './actions/locations';
+import changeTheme from './actions/theme';
 
-const SearchComponent = () => {
-  const [location, setLocation] = useState("Seattle, WA");
+const SearchComponent = (props) => {
   const [breeds, setBreeds] = useState([]);
   const [animal, AnimalDropDown] = useDropdown("Animal", "dog", ANIMALS);
   const [breed, BreedsDropDown, setBreed] = useDropdown("Breed", "", breeds);
   const [pets, setPets] = useState([]);
-  const [theme, setTheme] = useContext(ThemeContext);
 
   async function requestPets() {
     const { animals } = await pet.animals({
@@ -45,9 +46,9 @@ const SearchComponent = () => {
           Location
           <input
             id="location"
-            value={location}
+            value={props.location}
             placeholder="location"
-            onChange={e => setLocation(e.target.value)}
+            onChange={e => props.setLocation(e.target.value)}
           ></input>
         </label>
 
@@ -57,9 +58,9 @@ const SearchComponent = () => {
         <label htmlFor="theme">
           Theme
           <select
-            value={theme}
-            onChange={e => setTheme(e.target.value)}
-            onBlur={e => setTheme(e.target.value)}
+            value={props.theme}
+            onChange={e => props.setTheme(e.target.value)}
+            onBlur={e => props.setTheme(e.target.value)}
           >
             <option value="violet">Violet</option>
             <option value="red">Red</option>
@@ -68,11 +69,21 @@ const SearchComponent = () => {
           </select>
         </label>
 
-        <button style={{ backgroundColor: theme }}>Submit</button>
+        <button style={{ backgroundColor: props.theme }}>Submit</button>
       </form>
       <Results pets={pets} />
     </div>
   );
 };
 
-export default SearchComponent;
+const mapStateToProps = ({theme, location}) => ({
+  theme,
+  location,
+});
+
+const mapDispatchToProps = dispatch => ({
+  setLocation: location =>  dispatch(changeLocation(location)),
+  setTheme: theme => dispatch(changeTheme(theme))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchComponent);
